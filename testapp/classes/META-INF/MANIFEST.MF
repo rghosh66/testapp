@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: rghosh
+Build-Jdk: 9.0.1
+Implementation-Title: test application
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.rghosh
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/testapp/
+Created-By: Maven Integration for Eclipse
+

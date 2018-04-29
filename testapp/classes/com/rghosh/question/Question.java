@@ -3,29 +3,39 @@ package com.rghosh.question;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import org.springframework.data.annotation.Id;
 
 @Entity
+@Table (name="question")
 public class Question {
 	
     //Unique question ID
 	@Id
+    @Column(name="id")
 	private int questionUid;
 	
 	//Text of the question
+	@Column(name="questiontext")
 	private String questionText;
 	
 	//Options to be displayed to as answer
-	private List<String> options =new ArrayList<>();
+	private String options ;
 	
 	//Correct Option(s) as a question
 	//may have more than one correct answer
-	private List<String> correctOption = new ArrayList<>();
+    
+    @Column(name="correctoption")
+	private String correctOption;
 	
-	//Tag list for question classification 
-	private List<String> tags = new ArrayList<>();
+	//Tag list for question classification
+    
+	private String tags ;
 	
 	//Difficulty level of the question
 	//ToDo - limit value to 1-10
@@ -35,9 +45,12 @@ public class Question {
 	public Question() {
 		
 	}
+	
+	
 
-	public Question(int questionUid, String questionText, List<String> options, List<String> correctOption,
-			List<String> tags, int level) {
+
+	public Question(int questionUid, String questionText, String options, String correctOption, String tags,
+			int level) {
 		super();
 		this.questionUid = questionUid;
 		this.questionText = questionText;
@@ -46,11 +59,14 @@ public class Question {
 		this.tags = tags;
 		this.level = level;
 	}
-	
-	
+
+
+
+
 	public int getQuestionUid() {
 		return questionUid;
 	}
+
 
 	public void setQuestionUid(int questionUid) {
 		this.questionUid = questionUid;
@@ -61,42 +77,50 @@ public class Question {
 		return questionText;
 	}
 
+
 	public void setQuestionText(String questionText) {
 		this.questionText = questionText;
 	}
 
-	public List<String> getOptions() {
+
+	public String getOptions() {
 		return options;
 	}
 
-	public void setOptions(List<String> options) {
+
+	public void setOptions(String options) {
 		this.options = options;
 	}
 
-	public List<String> getCorrectOption() {
+
+	public String getCorrectOption() {
 		return correctOption;
 	}
 
-	public void setCorrectOption(List<String> correctOption) {
+
+	public void setCorrectOption(String correctOption) {
 		this.correctOption = correctOption;
 	}
 
-	public List<String> getTags() {
+
+	public String getTags() {
 		return tags;
 	}
 
-	public void setTags(List<String> tags) {
+
+	public void setTags(String tags) {
 		this.tags = tags;
 	}
+
 
 	public int getLevel() {
 		return level;
 	}
 
+
 	public void setLevel(int level) {
 		this.level = level;
 	}
-	
-	
 
+	
 }

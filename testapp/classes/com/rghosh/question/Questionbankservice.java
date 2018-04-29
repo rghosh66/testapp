@@ -5,14 +5,16 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
+
 @Service
 public class Questionbankservice {
-	
+
 	@Autowired
 	private QuestionbankRepository questionbankrepository;
 	
-	/*private List<Question> questionbank = Arrays.asList(new Question(1,"Question Text1", 
+	/*private List<Question> questionbank = Arrays.asList(new Question(1,"Question Text1",
                                                                Arrays.asList("a","b","c","d"), 
                                                                Arrays.asList("a","d"),
                                                                Arrays.asList("comp sc","java", "REST"),
@@ -40,6 +42,7 @@ public class Questionbankservice {
 	//Create question
 	public void addQuestion (Question question)		{
 		questionbankrepository.save(question);
+		
 		
 	}
 	
